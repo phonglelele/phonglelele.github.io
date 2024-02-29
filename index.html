@@ -52,8 +52,17 @@
         </button>
       </div>
     </div>
-    <audio autoplay loop>
-    <audio src="./sound/sound.mp3?v=10" type="audio/mpeg" ></audio>
+    <audio autoplay loop id="bgMusic">
+    <source src="./sound/sound.mp3?v=10" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var audio = document.getElementById('bgMusic');
+    audio.play();
+  });
+</script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
