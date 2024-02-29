@@ -63,35 +63,28 @@ document.addEventListener('DOMContentLoaded', function() {
     audio.play();
   });
 </script>
-    <script>
+<script>
 document.addEventListener('DOMContentLoaded', function() {
     var bgMusic = document.getElementById('bgMusic');
 
-    // Function to pause background music
-    function pauseBackgroundMusic() {
-        bgMusic.pause();
-    }
-
-    // Function to resume background music
-    function resumeBackgroundMusic() {
-        bgMusic.play();
+    function toggleBackgroundMusic(action) {
+        if (action === 'pause') bgMusic.pause();
+        if (action === 'play') bgMusic.play();
     }
 
     // Your JavaScript code for playing other sounds
-    // For example:
+    // Example:
     function playOtherSound() {
         var otherSound = new Audio('./sound/tick.mp3');
         otherSound.play();
-
-        // Pause background music while other sound is playing
-        pauseBackgroundMusic();
-
-        // Resume background music when other sound finishes playing
-        otherSound.addEventListener('ended', resumeBackgroundMusic);
+        toggleBackgroundMusic('pause');
+        otherSound.addEventListener('ended', function() {
+            toggleBackgroundMusic('play');
+        });
     }
 
-    // Call the function to play other sounds when needed
-    // For example:
+    // Call playOtherSound() when needed to play other sounds
+    // Example:
     playOtherSound();
 });
 </script>
