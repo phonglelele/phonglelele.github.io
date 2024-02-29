@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
     audio.play();
   });
 </script>
-<script>
 document.addEventListener('DOMContentLoaded', function() {
     var bgMusic = document.getElementById('bgMusic');
 
@@ -77,7 +76,13 @@ document.addEventListener('DOMContentLoaded', function() {
     function playOtherSound() {
         var otherSound = new Audio('./sound/tick.mp3');
         otherSound.play();
-        toggleBackgroundMusic('pause');
+
+        // Pause background music when other sound starts playing
+        otherSound.addEventListener('play', function() {
+            toggleBackgroundMusic('pause');
+        });
+
+        // Resume background music when other sound finishes playing
         otherSound.addEventListener('ended', function() {
             toggleBackgroundMusic('play');
         });
