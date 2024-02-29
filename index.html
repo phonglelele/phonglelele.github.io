@@ -63,6 +63,38 @@ document.addEventListener('DOMContentLoaded', function() {
     audio.play();
   });
 </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var bgMusic = document.getElementById('bgMusic');
+
+    // Function to pause background music
+    function pauseBackgroundMusic() {
+        bgMusic.pause();
+    }
+
+    // Function to resume background music
+    function resumeBackgroundMusic() {
+        bgMusic.play();
+    }
+
+    // Your JavaScript code for playing other sounds
+    // For example:
+    function playOtherSound() {
+        var otherSound = new Audio('./sound/tick.mp3');
+        otherSound.play();
+
+        // Pause background music while other sound is playing
+        pauseBackgroundMusic();
+
+        // Resume background music when other sound finishes playing
+        otherSound.addEventListener('ended', resumeBackgroundMusic);
+    }
+
+    // Call the function to play other sounds when needed
+    // For example:
+    playOtherSound();
+});
+</script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
