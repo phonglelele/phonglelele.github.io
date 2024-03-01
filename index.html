@@ -52,7 +52,13 @@
         </button>
       </div>
     </div>
-    <audio src="./sound/sound.mp3?v=1" autoplay loop></audio>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var audio = new Audio('./sound/sound.mp3?v=1');
+        audio.autoplay = true;
+        audio.loop = true;
+      });
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
