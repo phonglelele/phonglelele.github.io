@@ -55,8 +55,16 @@
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         var audio = new Audio('./sound/sound.mp3?v=1');
-        audio.autoplay = true;
-      });
+        
+            // Function to play audio
+            function playAudio() {
+                // Check if the audio is paused or ended
+                if (audio.paused || audio.ended) {
+                    // Play audio
+                    audio.play();
+         });
+        });
+    </script>
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
