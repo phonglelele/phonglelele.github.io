@@ -52,22 +52,26 @@
         </button>
       </div>
     </div>
-    <audio autoplay id="bgMusic">
-    <source src="./sound/sound.mp3?v=1" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var bgMusic = document.getElementById('bgMusic');
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+</head>
+<body>
+    <!-- Your HTML content goes here -->
 
-    function playBackgroundMusic() {
-        bgMusic.play();
-    }
-
-    // Play background music when the page loads
-    playBackgroundMusic();
-});
-</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var bgMusic = new Audio('./sound/sound.mp3');
+            bgMusic.addEventListener('canplaythrough', function() {
+                bgMusic.play();
+            });
+        });
+    </script>
+</body>
+</html>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
