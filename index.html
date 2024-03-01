@@ -52,7 +52,7 @@
         </button>
       </div>
     </div>
-  <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -62,14 +62,10 @@
 <body>
     <!-- Your HTML content goes here -->
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var bgMusic = new Audio('./sound/sound.mp3');
-            bgMusic.addEventListener('canplaythrough', function() {
-                bgMusic.play();
-            });
-        });
-    </script>
+    <audio autoplay loop>
+        <source src="./sound/sound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 </body>
 </html>
     <!-- Optional JavaScript -->
