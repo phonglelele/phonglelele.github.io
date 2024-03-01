@@ -52,46 +52,21 @@
         </button>
       </div>
     </div>
-    <audio autoplay loop id="bgMusic">
+    <audio autoplay id="bgMusic">
     <source src="./sound/sound.mp3?v=10" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    var audio = document.getElementById('bgMusic');
-    audio.play();
-  });
-</script>
- <script>
-document.addEventListener('DOMContentLoaded', function() {
     var bgMusic = document.getElementById('bgMusic');
 
-    function toggleBackgroundMusic(action) {
-        if (action === 'pause') bgMusic.pause();
-        if (action === 'play') bgMusic.play();
+    function playBackgroundMusic() {
+        bgMusic.play();
     }
 
-    // Your JavaScript code for playing other sounds
-    // Example:
-    function playOtherSound() {
-        var otherSound = new Audio('./sound/tick.mp3');
-        otherSound.play();
-
-        // Pause background music when other sound starts playing
-        otherSound.addEventListener('play', function() {
-            toggleBackgroundMusic('pause');
-        });
-
-        // Resume background music when other sound finishes playing
-        otherSound.addEventListener('ended', function() {
-            toggleBackgroundMusic('play');
-        });
-    }
-
-    // Call playOtherSound() when needed to play other sounds
-    // Example:
-    playOtherSound();
+    // Play background music when the page loads
+    playBackgroundMusic();
 });
 </script>
     <!-- Optional JavaScript -->
